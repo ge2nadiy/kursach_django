@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page %}Авто{% endblock %}
+
+{% block sidebar %}
+    Привет, {{ request.user }}
+    <hr/>
+
+    <a href="{% url 'AutoHome-account' %}">Профиль</a>
+    -
+    <a href="{% url 'AutoHome-auto' %}">Авто</a>
+
+{% endblock %}

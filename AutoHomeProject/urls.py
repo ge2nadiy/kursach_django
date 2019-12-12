@@ -35,4 +35,8 @@ urlpatterns = [
     path('AutoHome', views.AutoHome_home, name='AutoHome-home'),
 
     path('AutoHome/sign-up/', views.AutoHome_sign_up, name='AutoHome-sign-up'),
+
+    path('AutoHome/account/', views.AutoHome_account, name='AutoHome-account'),
+
+    path('AutoHome/auto/', views.AutoHome_auto, name='AutoHome-auto')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

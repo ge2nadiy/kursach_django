@@ -17,6 +17,14 @@ def home(request):
 def AutoHome_home(request):
     return render(request, 'AutoHome/home.html', {})
 
+@login_required(login_url='AutoHome/sign-in/')
+def AutoHome_account(request):
+    return render(request, 'AutoHome/account.html', {})
+
+@login_required(login_url='AutoHome/sign-in/')
+def AutoHome_auto(request):
+    return render(request, 'AutoHome/auto.html', {})
+
 def AutoHome_sign_up(request):
     user_form = UserForm()
     profile_form = ProfileForm()
