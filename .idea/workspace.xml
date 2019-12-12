@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79a9de3a-e845-4251-b2b3-a180364df006" name="Default Changelist" comment="" />
+    <list default="true" id="79a9de3a-e845-4251-b2b3-a180364df006" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeProject/urls.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +20,11 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Uii9d3RJSxnn1r7NpghyMgO7OB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -69,11 +82,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575845666098</updated>
-      <workItem from="1575845754662" duration="22091000" />
+      <workItem from="1575845754662" duration="22970000" />
+      <workItem from="1575994690859" duration="1778000" />
+      <workItem from="1576086593644" duration="6172000" />
+      <workItem from="1576105857314" duration="613000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

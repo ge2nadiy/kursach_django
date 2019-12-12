@@ -14,9 +14,10 @@
 </head>
 <body>
 <h2>Страница Регистрации</h2>
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ user_form.as_p }}
+    {{ profile_form.as_p }}
     <button type="submit">Зарегестрировать</button>
 </form>
 </body>
