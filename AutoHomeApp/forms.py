@@ -6,11 +6,19 @@ from AutoHomeApp.models import Profile
 
 
 class UserForm(forms.ModelForm):
-    username = forms.CharField(max_length=40, required=True)
+    email = forms.CharField(max_length=40, required=True)
     password = forms.CharField(widget=PasswordInput())
     class Meta:
         model = User
         fields = ('username', 'password', 'first_name', 'last_name', 'email')
+
+
+class UserFormForEdit(forms.ModelForm):
+    email = forms.CharField(max_length=40, required=True)
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
 
 
 class ProfileForm(forms.ModelForm):

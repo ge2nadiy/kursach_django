@@ -12,3 +12,12 @@
     color: white;
     background-color: #EC4D57;
 }
+
+.carousel-inner{
+    height: 500px;
+}
+
+.carousel-inner img{
+    width: 100%;
+    height: 100%;
+}
