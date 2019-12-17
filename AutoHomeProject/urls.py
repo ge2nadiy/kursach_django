@@ -38,5 +38,11 @@ urlpatterns = [
 
     path('AutoHome/account/', views.AutoHome_account, name='AutoHome-account'),
 
-    path('AutoHome/auto/', views.AutoHome_auto, name='AutoHome-auto')
+    path('AutoHome/auto/', views.AutoHome_auto, name='AutoHome-auto'),
+
+    path('AutoHome/bron/<int:modelauto>/', views.AutoHome_auto_rezerv, name='AutoHome-auto-rezerv'),
+
+    path('AutoHome/auto/rezerv/', views.AutoHome_all_rezerv_auto, name='AutoHome-all-rezerv-auto'),
+
+    path('AutoHome/auto/rezerv/<int:modelauto>/', views.AutoHome_delete, name='AutoHome-delete'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

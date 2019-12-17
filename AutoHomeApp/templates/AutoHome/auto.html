@@ -1,5 +1,50 @@
 {% extends 'AutoHome/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Каталог{% endblock %}
 
 {% block page %}
-    <h2>МАШИНА!</h2>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                <form action="" method="get">
+                    <h2>Фильтры</h2><br>
+                    {% bootstrap_form form %}
+                    <input type="submit" value="Применить" class="btn btn-red">
+                </form>
+            </div>
+            <div class="col">
+                <br>
+                {% for auto in autos %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <img src="{{ MEDIA_URL }}{{ auto.logo }}" width="300" height="185">
+                            </div>
+                            <div class="col-5">
+                                <h2> {{ auto.marka }} {{ auto.model }} <small>{{ auto.body_type }}</small></h2>
+                                <div>
+                                    Год выпуска: {{ auto.year_of_issue }} <br>
+                                    Мощность, л.с.: {{ auto.power }} <br>
+                                    Объём двигателя, куб. см: {{ auto.engine_volume }} <br>
+                                    Количество передач: {{ auto.number_of_gears }}
+                                </div>
+                            </div>
+                            <div class="col-sm text-right">
+                                 <h2>{{ auto.price }} BYN</h2><br><br>
+                                {% if user.is_authenticated %}
+                                    <a href="{% url 'AutoHome-auto-rezerv' auto.id %}" class="btn btn-red">Забронировать</a>
+                                {% else %}
+                                      <input type="submit" value="Забронировать" class="btn btn-red disabled">
+                                {% endif %}
+                            </div>
+                         </div>
+                    </div>
+                    <hr/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

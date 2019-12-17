@@ -1,10 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
 from AutoHomeApp.forms import UserForm, ProfileForm, UserFormForEdit
 from django.contrib.auth.models import User
 
 from django.contrib.auth import authenticate, login
+
+from AutoHomeApp.models import ModelAuto, Marka, Reserv
+
+from .forms import AutoHomeFilterForm, AutoHomeRezervForm
 
 
 # Create your views here.
@@ -13,9 +17,9 @@ def home(request):
     return redirect(AutoHome_home)
 
 
-@login_required(login_url='AutoHome/auto/')
 def AutoHome_home(request):
     return render(request, 'AutoHome/home.html', {})
+
 
 @login_required(login_url='../../AutoHome/sign-in/')
 def AutoHome_account(request):
@@ -35,9 +39,91 @@ def AutoHome_account(request):
         'profile_form': profile_form
     })
 
-@login_required(login_url='../../AutoHome/sign-in/')
+
 def AutoHome_auto(request):
-    return render(request, 'AutoHome/auto.html', {})
+    autos = ModelAuto.objects.all()
+    form = AutoHomeFilterForm(request.GET)
+    if form.is_valid():
+        if form.cleaned_data['marka']:
+            # all_marka = Marka.objects.distinct('marka')
+            autos = autos.filter(marka__exact=form.cleaned_data['marka'])
+
+        if form.cleaned_data['min_price']:
+            autos = autos.filter(price__gte=form.cleaned_data['min_price'])
+
+        if form.cleaned_data['max_price']:
+            autos = autos.filter(price__lte=form.cleaned_data['max_price'])
+
+        if form.cleaned_data['min_year_of_issue']:
+            autos = autos.filter(year_of_issue__gte=form.cleaned_data['min_year_of_issue'])
+
+        if form.cleaned_data['max_year_of_issue']:
+            autos = autos.filter(year_of_issue__lte=form.cleaned_data['max_year_of_issue'])
+
+    return render(request, 'AutoHome/auto.html', {
+        'autos': autos,
+        # 'markas': all_marka,
+        'form': form
+    })
+
+
+def AutoHome_all_rezerv_auto(request):
+    autos = Reserv.objects.filter(user=request.user)
+   # if request.method == 'POST':
+   #     emp = Reserv.objects.get(id=auto_id)
+   #     emp.delete()
+   #     return redirect(AutoHome_all_rezerv_auto())
+    return render(request, 'AutoHome/rezerv_avto.html', {
+        'autos': autos,
+    })
+
+
+def AutoHome_delete(request, modelauto):
+    if request.method == 'POST':
+     emp = Reserv.objects.get(id=modelauto)
+     emp.delete()
+     return redirect(AutoHome_all_rezerv_auto)
+
+    return redirect(AutoHome_all_rezerv_auto)
+
+def AutoHome_auto_rezerv(request, modelauto):
+    # modelauto = get_object_or_404(ModelAuto, pk)
+    # auto = get_object_or_404(ModelAuto, pk)
+    auto = ModelAuto.objects.get(id=modelauto)
+    form = AutoHomeRezervForm(initial={
+        'marka': auto.marka,
+        'model': auto.model,
+        'body_type': auto.body_type,
+        'power': auto.power,
+        'engine_volume': auto.engine_volume,
+        'number_of_gears': auto.number_of_gears,
+        'year_of_issue': auto.year_of_issue,
+        'price': auto.price,
+        'logo': auto.logo
+    })
+    #form = AutoHomeRezervForm(instance=ModelAuto.objects.get(id=modelauto))
+    if request.method == 'POST':
+        form = AutoHomeRezervForm(request.POST, request.FILES, initial={
+        'marka': auto.marka,
+        'model': auto.model,
+        'body_type': auto.body_type,
+        'power': auto.power,
+        'engine_volume': auto.engine_volume,
+        'number_of_gears': auto.number_of_gears,
+        'year_of_issue': auto.year_of_issue,
+        'price': auto.price,
+        'logo': auto.logo
+         })
+        if form.is_valid():
+            autos = form.save(commit=False)
+            autos.user = request.user
+            autos.save()
+            return redirect(AutoHome_auto)
+    return render(request, 'AutoHome/rezerv.html', {
+        'form': form,
+        'auto': auto
+    })
+
 
 def AutoHome_sign_up(request):
     user_form = UserForm()
@@ -54,8 +140,8 @@ def AutoHome_sign_up(request):
             new_profile.save()
 
             login(request, authenticate(
-                username = user_form.cleaned_data['username'],
-                password = user_form.cleaned_data['password']
+                username=user_form.cleaned_data['username'],
+                password=user_form.cleaned_data['password']
             ))
 
             return redirect(AutoHome_home)

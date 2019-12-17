@@ -1,0 +1,35 @@
+{% extends 'AutoHome/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block page %}
+    <br>
+    <br>
+    {% for auto in autos %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <img src="{{ MEDIA_URL }}{{ auto.logo }}" width="300" height="185">
+                </div>
+                <div class="col-5">
+                    <h2> {{ auto.marka }} {{ auto.model }} <small>{{ auto.body_type }}</small></h2>
+                    <div>
+                        Год выпуска: {{ auto.year_of_issue }} <br>
+                        Мощность, л.с.: {{ auto.power }} <br>
+                        Объём двигателя, куб. см: {{ auto.engine_volume }} <br>
+                        Количество передач: {{ auto.number_of_gears }}
+                    </div>
+                </div>
+                <div class="col-sm text-right">
+                    <h2>{{ auto.price }} BYN</h2><br><br>
+                    <form method="POST" action="{% url 'AutoHome-delete' auto.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="submit" value="Отказаться от бронирования" class="btn btn-red">
+                    </form>
+                </div>
+             </div>
+        </div>
+        <hr/>
+    {% endfor %}
+{% endblock %}

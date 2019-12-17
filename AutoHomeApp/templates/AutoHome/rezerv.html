@@ -1,0 +1,36 @@
+{% extends 'AutoHome/base.html' %}
+
+{% block title %}Бронирование{% endblock %}
+
+{% block page %}
+    <br>
+    <br>
+    <h1 class="text-center">Заявка на бронирование автомобиля</h1>
+    <br>
+    <br>
+ <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <img src="{{ MEDIA_URL }}{{ auto.logo }}" width="300" height="185">
+                </div>
+                <div class="col-5">
+                    <h2> {{ auto.marka }} {{ auto.model }} <small>{{ auto.body_type }}</small></h2>
+                    <div>
+                        Год выпуска: {{ auto.year_of_issue }} <br>
+                        Мощность, л.с.: {{ auto.power }} <br>
+                        Объём двигателя, куб. см: {{ auto.engine_volume }} <br>
+                        Количество передач: {{ auto.number_of_gears }}
+                    </div>
+                </div>
+                <div class="col-sm text-right">
+                     <h2>{{ auto.price }} BYN</h2><br><br>
+                     <button class="btn btn-red" type="submit">Подтвердить</button>
+                </div>
+             </div>
+        </div>
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    {{ form }}
+ </form>
+{% endblock %}

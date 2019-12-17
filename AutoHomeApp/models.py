@@ -46,3 +46,23 @@ class ModelAuto(models.Model):
 
     def __str__(self):
         return self.model
+
+
+class Reserv(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='rezerv')
+    marka = models.CharField(max_length=20, verbose_name='Марка')
+    model = models.CharField(max_length=30, verbose_name='Модель')
+    body_type = models.CharField(max_length=20, verbose_name='Тип кузова')
+    power = models.IntegerField(default=0, verbose_name='Мощность,л.с.')
+    engine_volume = models.IntegerField(default=0, verbose_name='Объём двигателя,куб. см')
+    number_of_gears = models.IntegerField(default=0, verbose_name='Количество передач')
+    year_of_issue = models.IntegerField(default=0, verbose_name='Год выпуска')
+    price = models.IntegerField(default=0, verbose_name='Цена')
+    logo = models.ImageField(upload_to='model_logo/', blank=False)
+
+    class Meta:
+        verbose_name_plural = 'Забронированные'
+        ordering = ['user']
+
+    def __str__(self):
+        return self.user.username

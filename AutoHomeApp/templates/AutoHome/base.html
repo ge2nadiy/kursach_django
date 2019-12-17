@@ -15,6 +15,11 @@
       <li class="nav-item active">
         <a href="{% url 'AutoHome-auto' %}" class="ml-5">Каталог</a>
       </li>
+        {% if user.is_authenticated %}
+            <li class="nav-item active">
+            <a href="{% url 'AutoHome-all-rezerv-auto' %}" class="ml-5">Забронированные авто</a>
+            </li>
+        {% endif %}
     </ul>
       {% if user.is_authenticated %}
     <form class="form-inline my-2 my-lg-0">
@@ -30,5 +35,4 @@
 </nav>
 {% endblock %}
 
-<script></script>
 

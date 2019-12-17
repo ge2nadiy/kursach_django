@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79a9de3a-e845-4251-b2b3-a180364df006" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/rezerv.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AutoHomeApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/auto.html" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/auto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AutoHomeApp/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/templates/base.html" afterDir="false" />
@@ -30,6 +32,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1Uii9d3RJSxnn1r7NpghyMgO7OB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -96,6 +99,9 @@
       <workItem from="1576086593644" duration="6172000" />
       <workItem from="1576105857314" duration="12548000" />
       <workItem from="1576335655769" duration="19640000" />
+      <workItem from="1576455896713" duration="49208000" />
+      <workItem from="1576567882049" duration="2048000" />
+      <workItem from="1576569959732" duration="21589000" />
     </task>
     <servers />
   </component>
@@ -114,5 +120,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/rezerv.html</url>
+          <line>10</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/AutoHomeApp/templates/AutoHome/rezerv.html</url>
+          <line>27</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AutoHomeApp/views.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
