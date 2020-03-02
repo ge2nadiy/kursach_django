@@ -29,6 +29,11 @@ class ProfileForm(forms.ModelForm):
 
 
 class AutoHomeFilterForm(forms.Form):
+    ordering = forms.ChoiceField(label='Сортировка', required=False, choices=[
+        ['marka', 'по марке'],
+        ['price', 'дешевые сверху'],
+        ['-price', 'дорогие сверху']
+    ])
     marka = forms.ModelChoiceField(required=False, label='Марка', queryset=Marka.objects.distinct('marka'))
     min_price = forms.IntegerField(required=False, label='Цена: от')
     max_price = forms.IntegerField(required=False, label='Цена: до')
@@ -40,3 +45,4 @@ class AutoHomeRezervForm(forms.ModelForm):
     class Meta:
         model = Reserv
         exclude = ('user',)
+

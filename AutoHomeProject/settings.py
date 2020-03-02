@@ -82,9 +82,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'AutoHome',
         'USER': 'postgres',
-        'PASSWORD': 'root',
+        'PASSWORD': 'ge2nadiy',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 

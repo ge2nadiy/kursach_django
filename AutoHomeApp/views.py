@@ -18,7 +18,10 @@ def home(request):
 
 
 def AutoHome_home(request):
-    return render(request, 'AutoHome/home.html', {})
+    markas = Marka.objects.all()
+    return render(request, 'AutoHome/home.html', {
+        'markas': markas
+    })
 
 
 @login_required(login_url='../../AutoHome/sign-in/')
@@ -59,6 +62,9 @@ def AutoHome_auto(request):
 
         if form.cleaned_data['max_year_of_issue']:
             autos = autos.filter(year_of_issue__lte=form.cleaned_data['max_year_of_issue'])
+
+        if form.cleaned_data['ordering']:
+            autos = autos.order_by(form.cleaned_data['ordering'])
 
     return render(request, 'AutoHome/auto.html', {
         'autos': autos,
