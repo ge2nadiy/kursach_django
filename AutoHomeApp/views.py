@@ -1,3 +1,8 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import generics, permissions, status
+from rest_framework.exceptions import PermissionDenied
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
@@ -6,12 +11,70 @@ from django.contrib.auth.models import User
 
 from django.contrib.auth import authenticate, login
 
-from AutoHomeApp.models import ModelAuto, Marka, Reserv
+from AutoHomeApp.models import *
+from AutoHomeApp.serializers import *
 
 from .forms import AutoHomeFilterForm, AutoHomeRezervForm
 
 
 # Create your views here.
+
+class Logout(APIView):
+
+    def get(self, request, format=None):
+        request.user.auth_token.delete()
+        return Response(status=status.HTTP_200_OK)
+
+
+class ProfileRetrieveUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializers
+
+
+class ProfileCreateView(generics.CreateAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializers
+
+
+class ProfileRetrieveView(generics.RetrieveAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializers
+
+
+class MarkasListView(generics.ListAPIView):
+    queryset = Marka.objects.all()
+    serializer_class = MarkaSerializers
+
+
+class ModelAutoRetrieveView(generics.RetrieveAPIView):
+    queryset = ModelAuto.objects.all()
+    serializer_class = ModelAutoSerializers
+
+
+class ModelAutoListView(generics.ListAPIView):
+    queryset = ModelAuto.objects.all()
+    serializer_class = ModelAutoSerializers
+
+
+class ModelAutoCreateView(generics.CreateAPIView):
+    queryset = ModelAuto.objects.all()
+    serializer_class = CreateModelAutoSerializers
+
+
+class ReservListView(generics.ListAPIView):
+    queryset = Reserv.objects.all()
+    serializer_class = ReservSerializers
+
+
+class ReservRetrieveView(generics.RetrieveAPIView):
+    queryset = Reserv.objects.all()
+    serializer_class = ReservSerializers
+
+
+class ReservDestroyView(generics.DestroyAPIView):
+    queryset = Reserv.objects.all()
+    serializer_class = CreateReservSerializers
+
 
 def home(request):
     return redirect(AutoHome_home)

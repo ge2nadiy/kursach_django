@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
     birth_date = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
-    phone =models.CharField(max_length=30, verbose_name='Моб. номер')
+    phone = models.CharField(max_length=30, verbose_name='Моб. номер')
 
     class Meta:
         verbose_name_plural = 'Данные пользователей'

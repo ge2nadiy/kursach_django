@@ -1,4 +1,4 @@
-#!D:\Python\AutoHomeProject\venv\Scripts\python.exe
+#!G:\Python\AutoHomeProject\venv\Scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":
