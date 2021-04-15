@@ -90,32 +90,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="AutoHomeProject" type="Python.DjangoServer" factoryName="Django server">
-      <module name="AutoHomeProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="AutoHomeProject.settings" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -161,7 +135,7 @@
       <workItem from="1618056212144" duration="1202000" />
       <workItem from="1618222915637" duration="4477000" />
       <workItem from="1618254704420" duration="8827000" />
-      <workItem from="1618334832479" duration="60627000" />
+      <workItem from="1618334832479" duration="61574000" />
     </task>
     <servers />
   </component>
