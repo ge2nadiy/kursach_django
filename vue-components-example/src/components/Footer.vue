@@ -15,8 +15,9 @@
             </button>
           </div>
           <div class="">
-
-            <button class="w-full m- p-2 text-sm bg-gray-800 uppercase lg:w-auto hover:bg-gray-700">  <img src="@/assets/media/icons/prokat.png" alt="logo" >Запись на тест-драйв</button>
+            <router-link :to="`/TestdriveForm`" class="font-bold text-xl flex items-end">
+              <button class="w-full m- p-2 text-sm bg-gray-800 uppercase lg:w-auto hover:bg-gray-700">  <img src="@/assets/media/icons/prokat.png" alt="logo" >Запись на тест-драйв</button>
+            </router-link>
           </div>
           <div>
 
