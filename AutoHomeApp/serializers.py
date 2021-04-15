@@ -6,21 +6,7 @@ from AutoHomeApp.models import *
 class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email']
-
-
-class CreateProfileSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = '__all__'
-
-
-class ProfileSerializers(serializers.ModelSerializer):
-    user = UserSerializers(many=False)
-
-    class Meta:
-        model = Profile
-        fields = '__all__'
+        fields = ['username', 'first_name', 'last_name', 'email', 'phone']
 
 
 class MarkaSerializers(serializers.ModelSerializer):
@@ -30,7 +16,7 @@ class MarkaSerializers(serializers.ModelSerializer):
 
 
 class ModelAutoSerializers(serializers.ModelSerializer):
-    marka = MarkaSerializers
+    marka = MarkaSerializers(many=False)
 
     class Meta:
         model = ModelAuto
@@ -43,15 +29,61 @@ class CreateModelAutoSerializers(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ReservSerializers(serializers.ModelSerializer):
-    user = UserSerializers
+class SoldCarsSerializers(serializers.ModelSerializer):
+    user = UserSerializers(many=False)
+    models = ModelAutoSerializers(many=False)
 
     class Meta:
-        model = Reserv
+        model = SoldCars
         fields = '__all__'
 
 
-class CreateReservSerializers(serializers.ModelSerializer):
+class CreateSoldCarsSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Reserv
+        model = SoldCars
+        fields = '__all__'
+
+
+class InquirySerializers(serializers.ModelSerializer):
+    user = UserSerializers(many=False)
+    models = ModelAutoSerializers(many=False)
+
+    class Meta:
+        model = Inquiry
+        fields = '__all__'
+
+
+class CreateInquirySerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Inquiry
+        fields = '__all__'
+
+
+class TestDriveSerializers(serializers.ModelSerializer):
+    user = UserSerializers(many=False)
+    models = ModelAutoSerializers(many=False)
+
+    class Meta:
+        model = TestDrive
+        fields = '__all__'
+
+
+class CreateTestDriveSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = TestDrive
+        fields = '__all__'
+
+
+class ServiceSerializers(serializers.ModelSerializer):
+    user = UserSerializers(many=False)
+    models = ModelAutoSerializers(many=False)
+
+    class Meta:
+        model = Service
+        fields = '__all__'
+
+
+class CreateServiceSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = TestDrive
         fields = '__all__'
