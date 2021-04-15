@@ -2,67 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79a9de3a-e845-4251-b2b3-a180364df006" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-components-example/src/assets/media/audi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-components-example/src/components/Footer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-components-example/src/views/Avtomobili_v_nalichii.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-components-example/src/views/Serviceform.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/migrations/0002_profile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/migrations/0003_auto_20191216_2120.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/migrations/0004_auto_20191217_1322.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/migrations/0005_auto_20210328_2237.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoHomeProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoHomeProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/.postcssrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/check-versions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/vue-loader.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/webpack.base.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/webpack.dev.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/build/webpack.prod.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/config/dev.env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/config/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/config/prod.env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/src/components/Auto.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/src/components/Home.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/src/components/Login.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/src/router/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/autohome-vue/static/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/assets/css/tailwind.css" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/assets/css/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/assets/media/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/components/MegaMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/components/MegaMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/components/ModalLogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/components/ModalLogin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/components/ModalRegister.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/components/ModalRegister.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/components/SearchComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/components/SearchComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/i18n.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/views/Contact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/views/Contact.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-components-example/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-components-example" beforeDir="false" afterPath="$PROJECT_DIR$/vue-components-example" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,6 +55,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vue-components-example" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1Uii9d3RJSxnn1r7NpghyMgO7OB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -220,7 +162,7 @@
       <workItem from="1618056212144" duration="1202000" />
       <workItem from="1618222915637" duration="4477000" />
       <workItem from="1618254704420" duration="8827000" />
-      <workItem from="1618334832479" duration="49078000" />
+      <workItem from="1618334832479" duration="50296000" />
     </task>
     <servers />
   </component>
