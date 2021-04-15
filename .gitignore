@@ -100,3 +100,4 @@ venv.bak/
 .mypy_cache/
 #pycharm
 .idea
+node_modules/
