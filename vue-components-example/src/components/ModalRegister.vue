@@ -54,7 +54,7 @@
 
 export default {
   data() {
-   return {
+ return {
       form: {
         username: "",
         first_name: "",
@@ -66,7 +66,7 @@ export default {
      repeatPassword: "",
      userPhone: "",
      phoneNumberMask: {
-       mask: '+{375}(00)000-00-00',
+mask: '+{375}(00)000-00-00',
        lazy: true
      },
      err: ''
