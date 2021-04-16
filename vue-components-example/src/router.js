@@ -42,6 +42,14 @@ export default new Router({
           path: '/testdriveForm',
           name: 'testdriveForm',
           component: () => import(/* webpackChunkName: "about" */ './views/TestdriveForm.vue')
+<<<<<<< HEAD
+=======
+        },
+        {
+          path: '/account',
+          name: 'account',
+          component: () => import(/* webpackChunkName: "about" */ './views/Account.vue')
+>>>>>>> 2eb59d554e7cfd740cf8bad9d45c07e79167c6ca
         }
       ]
     }
