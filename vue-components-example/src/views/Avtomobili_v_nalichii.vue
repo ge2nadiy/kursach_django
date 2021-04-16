@@ -1,22 +1,17 @@
 <template>
   <div>
     <div class="container mb-8 ml-2">
-
       <form action="#" method="post" class="flex flex-row ml-4">
         <div class="mr-2">
           <select class="border px-4 py-2 w-full rounded bg-gray-200">
             <option value="" disabled selected>По марке</option>
-            <option>Audi A4</option>
-            <option>Audi A3</option>
-            <option>Audi A8</option>
+            <option v-for="currency in models">{{currency.attributes.model}}</option>
           </select>
         </div>
         <div class="mr-2">
           <select class="border px-4 py-2 w-full rounded bg-gray-200">
             <option value="" disabled selected>По типу кузова</option>
-            <option>Седан</option>
-            <option>Кроссовер</option>
-            <option>Купе</option>
+            <option v-for="currency in models">{{currency.attributes.body_type}}</option>
           </select>
         </div>
         <div class="mr-2">
@@ -29,28 +24,16 @@
           <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded w-full">Показать</button>
         </div>
       </form>
-      <div class="flex justify-center mb-8">
+      <div class="flex justify-center mb-8" v-for="currency in models">
         <a href="/en/contact">
-          <img src="@/assets/media/audiA4.jpg" alt="logo">
+          <img :src="currency.attributes.logo" alt="logo">
         </a>
         <div class="ml-4 mx-auto">
-          <p class="mb-4 font-bold">Модель:{{}}</p>
-          <p class="mb-4 font-bold">Тип кузова {{}}</p>
-          <p class="mb-4 font-bold">Мощность {{}}</p>
-          <p class="mb-4 font-bold">Год выпуска {{}}</p>
-          <p class="mb-4 font-bold">Цена {{}}</p>
-        </div>
-      </div>
-      <div class="flex justify-center mb-8">
-        <a href="/en/contact">
-          <img src="@/assets/media/audiA4.jpg" alt="logo">
-        </a>
-        <div class="ml-4 mx-auto">
-          <p class="mb-4 font-bold">Модель:{{}}</p>
-          <p class="mb-4 font-bold">Тип кузова {{}}</p>
-          <p class="mb-4 font-bold">Мощность {{}}</p>
-          <p class="mb-4 font-bold">Год выпуска {{}}</p>
-          <p class="mb-4 font-bold">Цена {{}}</p>
+          <p class="mb-4 font-bold">Модель:{{currency.attributes.model}}</p>
+          <p class="mb-4 font-bold">Тип кузова: {{currency.attributes.body_type}}</p>
+          <p class="mb-4 font-bold">Мощность: {{currency.attributes.power}}</p>
+          <p class="mb-4 font-bold">Год выпуска: {{currency.attributes.year_of_issue}}</p>
+          <p class="mb-4 font-bold">Цена: {{currency.attributes.price}}</p>
         </div>
       </div>
     </div>
@@ -62,7 +45,7 @@
   export default {
     data() {
       return {
-        models: '',
+        models: [],
       }
     },
     created() {
