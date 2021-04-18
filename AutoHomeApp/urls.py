@@ -7,7 +7,7 @@ urlpatterns = [
     #   path('auth/', include('djoser.urls')),
     #   path('auth/token', obtain_auth_token, name='token'),
     #   path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('user/<int:pk>', UserRetrieveUpdateView.as_view()),
+    path('<int:pk>/', UserUpdateView.as_view()),
 
     path('marka/', MarkasListView.as_view()),
 

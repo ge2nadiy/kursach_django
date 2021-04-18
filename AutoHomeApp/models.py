@@ -6,6 +6,8 @@ from django.contrib.auth.models import User, AbstractUser
 class User(AbstractUser):
     phone = models.CharField(max_length=30, verbose_name='Моб. номер')
 
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone']
+
     class Meta:
         verbose_name_plural = 'Данные пользователей'
 

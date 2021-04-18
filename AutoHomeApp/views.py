@@ -24,7 +24,7 @@ class Logout(APIView):
         return Response(status=status.HTTP_200_OK)
 
 
-class UserRetrieveUpdateView(generics.RetrieveUpdateAPIView):
+class UserUpdateView(generics.RetrieveUpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializers
 

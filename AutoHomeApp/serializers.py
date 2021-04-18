@@ -9,6 +9,23 @@ class UserSerializers(serializers.ModelSerializer):
         fields = ['username', 'first_name', 'last_name', 'email', 'phone']
 
 
+class UpdateUserSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'phone']
+
+        def update(self, instance, validated_data):
+            instance.username = validated_data['username']
+            instance.first_name = validated_data['first_name']
+            instance.last_name = validated_data['last_name']
+            instance.email = validated_data['email']
+            instance.phone = validated_data['phone']
+
+            instance.save()
+
+            return instance
+
+
 class MarkaSerializers(serializers.ModelSerializer):
     class Meta:
         model = Marka
