@@ -1,12 +1,13 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from AutoHomeApp.models import *
+from django.core.mail import send_mail
 
 
 class UserSerializers(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'phone']
+        fields = ['id','username', 'first_name', 'last_name', 'email', 'phone']
 
 
 class UpdateUserSerializers(serializers.ModelSerializer):
@@ -40,6 +41,12 @@ class ModelAutoSerializers(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class UpdateModelAutoSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = ModelAuto
+        fields = ['model','body_type', 'power', 'engine_volume', 'number_of_gears', 'year_of_issue','price','logo']
+
+
 class CreateModelAutoSerializers(serializers.ModelSerializer):
     class Meta:
         model = ModelAuto
@@ -48,7 +55,7 @@ class CreateModelAutoSerializers(serializers.ModelSerializer):
 
 class SoldCarsSerializers(serializers.ModelSerializer):
     user = UserSerializers(many=False)
-    models = ModelAutoSerializers(many=False)
+    model = ModelAutoSerializers(many=False)
 
     class Meta:
         model = SoldCars
@@ -56,6 +63,19 @@ class SoldCarsSerializers(serializers.ModelSerializer):
 
 
 class CreateSoldCarsSerializers(serializers.ModelSerializer):
+
+    def create(self, validated_data, ):
+        print(validated_data['user'])
+        user = User.objects.get(username=validated_data['user'])
+        send_mail(
+            'Заявка на покупку автомобиля.', #tema
+            'Здравствуйте уважаемый ' + user.first_name + '. Ваша заявка на покупку автомобиля одобрена. Для уточнения можете связаться с нами: autohome228@gmail.com',
+            'autohome228@gmail.com',
+            [user.email],
+            False
+        )
+        return super().create(validated_data=validated_data)
+
     class Meta:
         model = SoldCars
         fields = '__all__'
@@ -63,7 +83,7 @@ class CreateSoldCarsSerializers(serializers.ModelSerializer):
 
 class InquirySerializers(serializers.ModelSerializer):
     user = UserSerializers(many=False)
-    models = ModelAutoSerializers(many=False)
+    model = ModelAutoSerializers(many=False)
 
     class Meta:
         model = Inquiry
@@ -78,7 +98,7 @@ class CreateInquirySerializers(serializers.ModelSerializer):
 
 class TestDriveSerializers(serializers.ModelSerializer):
     user = UserSerializers(many=False)
-    models = ModelAutoSerializers(many=False)
+    model = ModelAutoSerializers(many=False)
 
     class Meta:
         model = TestDrive
@@ -86,6 +106,18 @@ class TestDriveSerializers(serializers.ModelSerializer):
 
 
 class CreateTestDriveSerializers(serializers.ModelSerializer):
+    def create(self, validated_data, ):
+        print(validated_data['user'])
+        user = User.objects.get(username=validated_data['user'])
+        send_mail(
+            'Заявка на тест-драйв.', #tema
+            'Здравствуйте уважаемый ' + user.first_name + '! Ваша заявка на тест-драйв успешно оформлена. Подробную информацию Вы можете увидеть в Вашем личном кабинете на сайте. Для уточнения можете связаться с нами: autohome228@gmail.com',
+            'autohome228@gmail.com',
+            [user.email],
+            False
+        )
+        return super().create(validated_data=validated_data)
+
     class Meta:
         model = TestDrive
         fields = '__all__'
@@ -102,5 +134,5 @@ class ServiceSerializers(serializers.ModelSerializer):
 
 class CreateServiceSerializers(serializers.ModelSerializer):
     class Meta:
-        model = TestDrive
+        model = Service
         fields = '__all__'

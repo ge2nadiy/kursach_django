@@ -33,15 +33,50 @@ class MarkasListView(generics.ListAPIView):
     queryset = Marka.objects.all()
     serializer_class = MarkaSerializers
 
+class ModelAutoUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = ModelAuto.objects.all()
+    serializer_class = UpdateModelAutoSerializers
+
+class ModelAutoDestroyView(generics.DestroyAPIView):
+    queryset = ModelAuto.objects.all()
+    serializer_class = CreateModelAutoSerializers
+
 
 class ModelAutoRetrieveView(generics.RetrieveAPIView):
     queryset = ModelAuto.objects.all()
     serializer_class = ModelAutoSerializers
 
+class ModelAutoCreateView(generics.CreateAPIView):
+    queryset = ModelAuto.objects.all()
+    serializer_class = CreateModelAutoSerializers
+
 
 class ModelAutoListView(generics.ListAPIView):
-    queryset = ModelAuto.objects.all()
     serializer_class = ModelAutoSerializers
+
+    def get_queryset(self):
+        queryset = ModelAuto.objects.all()
+
+        params = self.request.query_params
+
+        model = params.get('model', None)
+        body_type = params.get('body_type', None)
+        min_price = params.get('min_price', None)
+        max_price = params.get('max_price', None)
+
+        if model:
+            queryset = queryset.filter(model=model)
+
+        if body_type:
+            queryset = queryset.filter(body_type=body_type)
+
+        if min_price:
+            queryset = queryset.filter(price__gte=min_price)
+
+        if max_price:
+            queryset = queryset.filter(price__lte=max_price)
+
+        return queryset
 
 
 class SoldCarListView(generics.ListAPIView):

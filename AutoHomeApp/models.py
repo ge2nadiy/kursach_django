@@ -6,7 +6,7 @@ from django.contrib.auth.models import User, AbstractUser
 class User(AbstractUser):
     phone = models.CharField(max_length=30, verbose_name='Моб. номер')
 
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'phone', 'email']
 
     class Meta:
         verbose_name_plural = 'Данные пользователей'
@@ -87,7 +87,9 @@ class TestDrive(models.Model):
 
 class Service(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    model = models.ForeignKey(ModelAuto, on_delete=models.CASCADE)
+    model = models.CharField(max_length=20, verbose_name='Модель')
+    marka = models.CharField(max_length=20, verbose_name='Марка')
+    years = models.CharField(max_length=20, verbose_name='Год выпуска')
     description = models.TextField(max_length=250, verbose_name='Описание проблемы')
     date_service = models.DateField(verbose_name='Дата записи на сервис')
 

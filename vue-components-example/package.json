@@ -12,7 +12,6 @@
     "axios": "^0.21.1",
     "core-js": "^2.6.12",
     "jquery": "^3.6.0",
-    "vue": "^2.6.12",
     "vue-axios": "^3.2.4",
     "vue-clickaway": "^2.2.2",
     "vue-fuse": "^2.2.1",

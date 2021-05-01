@@ -1,16 +1,13 @@
 <template>
   <div class="container flex flex-row">
     <div class="px-20 py-8">
-      <h2 class="mb-4 uppercase tracking-wide text-xl">Запись на тест-драйв</h2>
+      <h2 class="mb-4 uppercase tracking-wide text-xl">Запись на покупку</h2>
       <form @submit="testdrive">
         <div class="form-group mb-4">
-        <select v-model="model"   class="border px-4 py-2 w-full rounded bg-gray-200">
-          <option disabled selected>Выбрать авто</option>
-          <option v-for="currency in auto" :value="currency.id" :key="currency.id">{{currency.attributes.marka.marka}} {{currency.attributes.model}}</option>
-        </select>
-        </div>
-        <div class="form-group mb-4">
-        <input v-model="date" type="date" class="border px-4 py-2 w-full rounded bg-gray-200"/>
+          <select v-model="model"   class="border px-4 py-2 w-full rounded bg-gray-200">
+            <option disabled selected>Выбрать авто</option>
+            <option v-for="currency in auto" :value="currency.id" :key="currency.id">{{currency.attributes.marka.marka}} {{currency.attributes.model}}</option>
+          </select>
         </div>
         <div class="form-group mb-4">
           <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded w-full">Отправить</button>
@@ -30,7 +27,6 @@ export default {
   data() {
     return {
       auto: '',
-      date: '',
       user: '',
       model:''
     }
@@ -80,15 +76,14 @@ export default {
         data: {
           user: this.user.id,
           model: this.model,
-          date_inquiry: this.date
         },
         success: (response) => {
           console.log("SUCCESS")
-          alert('Спасибо, мы ответим вам на почту')
+          alert("Спасибо,ответим вам на почту")
         },
         error: (response) => {
           if (response.status === 400) {
-            alert('Что-то не так'+ this.model)
+            alert('Что-то нетак'+ this.model)
           }
         }
       })

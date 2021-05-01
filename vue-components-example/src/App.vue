@@ -50,9 +50,11 @@
           <li class="mr-12 mb-6 lg:mb-0">
             <search-component />
           </li>
-          <li class="mr-8 mb-6 lg:mb-0">
+<!--          <div v-if="auth != null"> </div>-->
+          <li class="mr-8 mb-6 lg:mb-0" >
             <modal-login />
           </li>
+
           <li class="mr-8 mb-6 lg:mb-0">
             <modal-register />
           </li>
@@ -82,6 +84,11 @@ import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'app',
+  data(){
+    return{
+      auth: this.localStorage.getItem("token")
+    }
+  },
   created() {
     if(localStorage.getItem("token")) {
       $.ajaxSetup({

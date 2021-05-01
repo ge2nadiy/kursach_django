@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_summernote',
-
+    'social_django',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
@@ -73,6 +73,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social_django.context_processors.backends'
             ],
         },
     },
@@ -189,3 +190,18 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': False,
     'SERIALIZERS': {},
 }
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'autohome228@gmail.com'
+EMAIL_HOST_PASSWORD = 'AutoHome322'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+
+SOCIAL_AUTH_VK_OAUTH2_KEY='7837918'
+SOCIAL_AUTH_VK_OAUTH2_SECRET='ICIBwp4DTJzEhJ64zRI1'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.vk.VKOAuth2',
+    #'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+SOCIAL_AUTH_POSTGRES_JSONFIELD = True

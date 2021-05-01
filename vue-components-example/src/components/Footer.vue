@@ -20,10 +20,17 @@
             </router-link>
           </div>
           <div>
-            <button class="w-full m- p-2 text-sm bg-gray-800 uppercase lg:w-auto hover:bg-gray-700"><img src="@/assets/media/icons/nal.png" alt="logo" >Автомобили в наличии</button>
+            <router-link :to="`/buyform`" class="font-bold text-xl flex items-end">
+            <button class="w-full m- p-2 text-sm bg-gray-800 uppercase lg:w-auto hover:bg-gray-700"><img src="@/assets/media/icons/nal.png" alt="logo" >Запись на покупку</button>
+            </router-link>
           </div>
           <div>
             <button class="w-full m- p-2 text-sm bg-gray-800 uppercase lg:w-auto hover:bg-gray-700">  <img src="@/assets/media/icons/car-service.png" alt="logo" >Официальный сервис</button>
+          </div>
+          <div>
+            <router-link :to="`/3dTour`" class="font-bold text-xl flex items-end">
+            <button class="w-full m- p-2 text-sm bg-gray-800 uppercase lg:w-auto hover:bg-gray-700">  <img src="@/assets/media/icons/3d.png" alt="logo" >3D тур</button>
+            </router-link>
           </div>
         </div>
       </div>

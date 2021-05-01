@@ -32,64 +32,57 @@
 </template>
 
 <script>
-  import $ from 'jquery'
-  export default {
+import $ from 'jquery'
+export default {
   name: "Account",
-    data() {
-      return {
-        form: {
-          username: '',
-          first_name: '',
-          last_name: '',
-          email: '',
-          phone: ''
-        },
-      }
-    },
-    created() {
-      $.ajaxSetup({
-        headers: {'Authorization': 'Token ' + localStorage.getItem('auth_token')}
-      });
-      this.loadUser()
-    },
-    methods: {
-      loadUser() {
-        $.ajax({
-          url: "http://127.0.0.1:8000/auth/users/me/",
-          contentType: 'application/vnd.api+json',
-          type: "GET",
-          success: (response) => {
-            this.form = response.data;
-            console.log(this.form)
-            console.log(this.form.id)
-          }
-        })
+  data() {
+    return {
+      user_id: null,
+      form: {
+        username: '',
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: ''
       },
-      setUser() {
-        console.log(this.form);
-         $.ajax({
-            url: "http://127.0.0.1:8000/api/3/",
-            contentType: 'application/vnd.api+json',
-            type: "PUT",
-            data: {
-              username: this.form.username,
-              first_name: this.form.first_name,
-              last_name: this.form.last_name,
-              email: this.form.email,
-              phone: this.form.phone
-            },
-            success: (response) => {
-              console.log('Данные обновились')
-            },
-            error: (response) => {
-              console.log(error())
-            }
-         })
-      }
+    }
+  },
+  created() {
+    // $.ajaxSetup({
+    //   headers: {'Authorization': 'Token ' + localStorage.getItem('auth_token')}
+    // });
+    this.loadUser()
+  },
+  methods: {
+    loadUser() {
+      $.ajax({
+        url: "http://127.0.0.1:8000/auth/users/me/",
+        contentType: 'application/vnd.api+json',
+        headers: {'Authorization': 'Token ' + localStorage.getItem('auth_token')},
+        type: "GET",
+        success: (response) => {
+          this.form = response.data.attributes;
+          this.user_id = response.data.id;
+          console.log(this.form)
+
+        }
+      })
+    },
+    setUser() {
+      $.ajax({
+        url: "http://127.0.0.1:8000/api/users/" + this.user_id,
+        // contentType: 'application/vnd.api+json',
+        type: "PUT",
+        data: this.form,
+        success: (response) => {
+          console.log('Данные обновились')
+          this.loadUser()
+        },
+        error: (response) => {
+          console.log(error())
+        }
+      })
     }
   }
+}
 </script>
-
-<style scoped>
-
-</style>
